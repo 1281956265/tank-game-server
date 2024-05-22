@@ -12,8 +12,8 @@ orm:
   entity-package: com.zfoo.tank.common.**.entity
   host:
     database: party
-    user:
-    password:
+    user: admin
+    password: 123456
     address:
       - 127.0.0.1:27017
   caches:

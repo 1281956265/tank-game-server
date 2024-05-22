@@ -50,8 +50,8 @@ orm:
   entity-package: com.zfoo.tank.admin.**.entity
   host:
     database: tank
-    user:
-    password:
+    user: admin
+    password: 123456
     address:
       - 127.0.0.1:27017
   caches:
