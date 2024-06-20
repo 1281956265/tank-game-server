@@ -15,24 +15,26 @@
     <modules>
         <module>common</module>
         <module>admin</module>
-        <module>gateway</module>
-        <module>home</module>
-        <module>cache</module>
-        <module>room</module>
-        <module>push</module>
-        <module>login</module>
+<!--        <module>gateway</module>-->
+<!--        <module>home</module>-->
+<!--        <module>cache</module>-->
+<!--        <module>room</module>-->
+<!--        <module>push</module>-->
+<!--        <module>login</module>-->
 
-        <module>zfoo-branch-for-tank</module>
-        <module>single</module>
+<!--        <module>zfoo-branch-for-tank</module>-->
+<!--        <module>single</module>-->
         <module>single-boot</module>
 
-        <module>zfoo-graalvm-asimple</module>
-        <module>zfoo-graalvm-event</module>
-        <module>zfoo-graalvm-storage</module>
-        <module>zfoo-graalvm-scheduler</module>
-        <module>zfoo-graalvm-orm</module>
-        <module>zfoo-graalvm-protocol</module>
-        <module>zfoo-graalvm-net</module>
+<!--        <module>zfoo-graalvm-asimple</module>-->
+<!--        <module>zfoo-graalvm-event</module>-->
+<!--        <module>zfoo-graalvm-storage</module>-->
+<!--        <module>zfoo-graalvm-scheduler</module>-->
+<!--        <module>zfoo-graalvm-orm</module>-->
+<!--        <module>zfoo-graalvm-protocol</module>-->
+<!--        <module>zfoo-graalvm-net</module>-->
+
+<!--        <module>robot</module>-->
     </modules>
 
     <properties>
@@ -53,6 +55,10 @@
         <!-- Office document parsing -->
         <poi.version>5.2.3</poi.version>
         <csv.version>1.10.0</csv.version>
+
+        <lombok.version>1.18.24</lombok.version>
+        <caffine.version>3.1.8</caffine.version>
+
         <!-- maven core plugin -->
         <native-maven-plugin.version>0.10.1</native-maven-plugin.version>
         <maven-clean-plugin.version>3.3.1</maven-clean-plugin.version>
@@ -75,6 +81,97 @@
         <java.version>17</java.version>
         <file.encoding>UTF-8</file.encoding>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zfoo.tank</groupId>
+                <artifactId>common</artifactId>
+                <version>1.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zfoo</groupId>
+                <artifactId>boot</artifactId>
+                <version>${zfoo.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zfoo</groupId>
+                <artifactId>event</artifactId>
+                <version>${zfoo.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zfoo</groupId>
+                <artifactId>hotswap</artifactId>
+                <version>${zfoo.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zfoo</groupId>
+                <artifactId>net</artifactId>
+                <version>${zfoo.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zfoo</groupId>
+                <artifactId>scheduler</artifactId>
+                <version>${zfoo.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zfoo</groupId>
+                <artifactId>storage</artifactId>
+                <version>${zfoo.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zfoo</groupId>
+                <artifactId>orm</artifactId>
+                <version>${zfoo.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.ben-manes.caffeine</groupId>
+                <artifactId>caffeine</artifactId>
+                <version>${caffine.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-logging</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
 
 
     <build>
