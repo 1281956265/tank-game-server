@@ -36,3 +36,10 @@ net:
   protocol-location: protocol.xml
   code-languages: 0
   fold-protocol: true
+
+
+
+luban:
+  id: luBanConfig
+  resourcePath: classpath:/json/
+  genCodePath: src/main/gen

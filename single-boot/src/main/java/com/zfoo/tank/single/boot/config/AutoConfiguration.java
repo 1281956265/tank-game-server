@@ -15,6 +15,7 @@ package com.zfoo.tank.single.boot.config;
 import com.zfoo.net.config.model.NetConfig;
 import com.zfoo.orm.config.OrmConfig;
 import com.zfoo.storage.config.StorageConfig;
+import com.zfoo.tank.common.cfg.LuBanConfig;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -35,6 +36,11 @@ public class AutoConfiguration {
         return storageConfig;
     }
 
+    @Bean
+    @ConfigurationProperties(prefix = "luban")
+    public LuBanConfig luBanConfig() {
+        return new LuBanConfig();
+    }
 
     @Bean
     @ConfigurationProperties(prefix = "orm")

@@ -46,12 +46,12 @@ public class SystemService implements ApplicationListener<AppStartEvent> {
 
     @Override
     public void onApplicationEvent(AppStartEvent event) {
-        var tree = new DfaWordTree();
-        var words = filterWordResources.getAll().stream()
-                .map(it -> it.getFilter().trim().toLowerCase())
-                .collect(Collectors.toList());
-        tree.addWords(words);
-        dfaWordTree = tree;
+//        var tree = new DfaWordTree();
+//        var words = filterWordResources.getAll().stream()
+//                .map(it -> it.getFilter().trim().toLowerCase())
+//                .collect(Collectors.toList());
+//        tree.addWords(words);
+//        dfaWordTree = tree;
     }
 
     /**

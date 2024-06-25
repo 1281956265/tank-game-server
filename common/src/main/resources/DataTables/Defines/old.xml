@@ -1,0 +1,17 @@
+<module name="old">
+	<bean name="FilterWordResource" comment="屏蔽字">
+		<var name="id" type="int" comment="id"/>
+		<var name="filter" type="string"/>
+	</bean>
+	<table name="TbFilterWordResource" value="FilterWordResource" input="words_filter@old/FilterWordResource1.xlsx" comment="屏蔽字表"/>
+
+
+	<bean name="PlayerExpResource" comment="经验">
+		<var name="playerLevel" type="int"/>
+		<var name="exp" type="int"/>
+		<var name="gold" type="int"/>
+		<var name="gem" type="int"/>
+		<var name="diamond" type="int"/>
+	</bean>
+	<table name="TbPlayerExpResource" value="PlayerExpResource" input="lord_lvl@old/PlayerExpResource1.xlsx" comment="经验表"/>
+</module>

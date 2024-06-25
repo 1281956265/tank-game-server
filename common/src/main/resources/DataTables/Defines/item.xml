@@ -9,8 +9,6 @@
 	</enum>
 	
 	<enum name="ECurrencyType">
-
-	
 		<var name="DIAMOND" alias="钻石" value="1"/>
 		<var name="GOLD" alias="金币" value="2"/>
 		<var name="SILVER" alias="银币" value="3"/>
@@ -31,7 +29,8 @@
 		<var name="EXPANSION" alias="扩容道具" value="10"/>
 		<var name="MATERIAL" alias="制作材料" value="11"/>
 	</enum>
-	
+
+
 	<enum name="EMinorType">
 		<var name="DIAMOND" alias="钻石" value="101"/>
 		<var name="GOLD" alias="金币" value="102"/>
@@ -83,54 +82,7 @@
 		<var name="CONSTRUCTION_MATERIAL" alias="制作材料" value="1101"/>
 		<var name="DESIGN_DRAWING" alias="设计图纸" value="1102"/>
 	</enum>
-	
-	<enum name="EClothersStarQualityType">
-		<var name="ONE" alias="一星" value="1" />
-		<var name="TWO" alias="二星" />
-		<var name="THREE" alias="三星" />
-		<var name="FOUR" alias="四星" />
-		<var name="FIVE" alias="五星" />
-		<var name="SIX" alias="六星" />
-		<var name="SEVEN" alias="七星" />
-		<var name="EIGHT" alias="八星" />
-		<var name="NINE" alias="九星" />
-		<var name="TEN" alias="十星" />
-	</enum>	
-	
-	<enum name="EClothersTag">风格标签
-		<var name="FANG_SHAI" alias="防晒" value="1" />
-		<var name="WU_ZHE" alias="舞者" />
-	</enum>
-	
-	<enum name="EUseType"> 使用类型
-		<var name="MANUAL" alias="手动"/>
-		<var name="AUTO" alias="自动"/>
-	</enum>
 
-	<enum name="EClothesHidePartType"> 服装隐藏部位类型
-		<var name="CHEST" alias="胸部" value="0"/>
-		<var name="HEAD" alias="手"/>
-		<var name="SPINE_UPPER" alias="脊柱上"/>
-		<var name="SPINE_LOWER" alias="脊柱下"/>
-		<var name="HIP" alias="臀部"/>
-		<var name="LEG_UPPER" alias="腿上"/>
-		<var name="LEG_MIDDLE" alias="腿中"/>
-		<var name="LEG_LOWER" alias="腿下"/>
-	</enum>
-
-	<enum name="EClothesPropertyType">服装属性
-		<var name="JIAN_YUE" alias="简约" value="1" />
-		<var name="HUA_LI" alias="华丽" />
-		<var name="KE_AI" alias="可爱" />
-		<var name="CHENG_SHU" alias="成熟" />
-		<var name="HUO_PO" alias="活泼" />
-		<var name="YOU_YA" alias="优雅" />
-		<var name="QING_CHUN" alias="清纯" />		
-		<var name="XING_GAN" alias="性感" />
-		<var name="QING_LIANG" alias="清凉" />
-		<var name="BAO_NUAN" alias="保暖" />
-	</enum>
-	
 	<bean name="Item" comment="道具">
 		<var name="id" type="int" comment="道具id"/>
 		<var name="name" type="string"/>
