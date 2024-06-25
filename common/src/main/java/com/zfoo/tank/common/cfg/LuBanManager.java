@@ -23,6 +23,7 @@ import org.springframework.util.ResourceUtils;
 
 import java.io.IOException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -39,6 +40,10 @@ public class LuBanManager implements ILuBanManager {
 
     private Tables tables;
 
+    @Override
+    public Tables getTables() {
+        return tables;
+    }
 
     public LuBanConfig getLuBanConfig() {
         return luBanConfig;
@@ -56,20 +61,21 @@ public class LuBanManager implements ILuBanManager {
     @Override
     public void inject() {
         try {
-            // 这种方式已经成功了！！！！！！！！！！！
-//            PathMatchingResourcePatternResolver resoutceBuilder = new PathMatchingResourcePatternResolver();
-//            tables = new Tables(file -> {
-//                Resource resource = Arrays.stream(resoutceBuilder.getResources(luBanConfig.getResourcePath() + file + ".json")).findFirst().get();
-//                String jsonStr = new String(resource.getInputStream().readAllBytes(), "UTF-8");
-//                return JsonParser.parseString(jsonStr);
-//            });
 
-            ResourceUtils.getFile(luBanConfig.getResourcePath() + "common_tbglobalconfig.json");
-            Tables tables = new Tables(file -> JsonParser.parseString(
-              new String(Files.readAllBytes(Paths.get(luBanConfig.getResourcePath(), file + ".json")), "UTF-8")));
-            System.out.println(tables);
+            PathMatchingResourcePatternResolver resoutceBuilder = new PathMatchingResourcePatternResolver();
+            tables = new Tables(file -> {
+                Resource resource = Arrays.stream(resoutceBuilder.getResources(luBanConfig.getResourcePath() + file + ".json")).findFirst().get();
+                String jsonStr = new String(resource.getInputStream().readAllBytes(), StandardCharsets.UTF_8);
+                return JsonParser.parseString(jsonStr);
+            });
+            // 上面这种方式已经成功了！！！！！！！！！！！   但是有更好的加载resources的方法？？？
+//            ResourceUtils.getFile(luBanConfig.getResourcePath() + "common_tbglobalconfig.json");
+//            Tables tables = new Tables(file -> JsonParser.parseString(
+//              new String(Files.readAllBytes(Paths.get(luBanConfig.getResourcePath(), file + ".json")), "UTF-8")));
+//            System.out.println(tables);
         } catch (IOException e) {
-            logger.error("lubanConfig inject error!", e);
+            logger.error("init luban tables error!!!!!", e);
+            throw new RuntimeException();
         }
     }
 

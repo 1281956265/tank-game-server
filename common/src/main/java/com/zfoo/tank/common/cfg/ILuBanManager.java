@@ -13,6 +13,8 @@
 
 package com.zfoo.tank.common.cfg;
 
+import cfg.Tables;
+
 import java.io.IOException;
 
 /**
@@ -42,4 +44,6 @@ public interface ILuBanManager {
 //    void updateStorage(Class<?> clazz, IStorage<?, ?> storage);
 //
 //    StorageConfig storageConfig();
+
+    Tables getTables();
 }

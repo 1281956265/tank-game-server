@@ -13,6 +13,7 @@
 
 package com.zfoo.tank.common.cfg;
 
+import cfg.Tables;
 import com.zfoo.scheduler.util.StopWatch;
 import lombok.SneakyThrows;
 import org.slf4j.Logger;
@@ -37,7 +38,7 @@ public class LuBanContext implements ApplicationListener<ApplicationContextEvent
 
     private ILuBanManager luBanManager;
 
-    public static LuBanContext getStorageContext() {
+    public static LuBanContext getLubanContext() {
         return instance;
     }
 
@@ -45,8 +46,12 @@ public class LuBanContext implements ApplicationListener<ApplicationContextEvent
         return instance.applicationContext;
     }
 
-    public static ILuBanManager getStorageManager() {
+    public static ILuBanManager getLubanManager() {
         return instance.luBanManager;
+    }
+
+    public static Tables cfg() {
+        return instance.luBanManager.getTables();
     }
 
 //    public static <V, K> V get(Class<V> clazz, K id) {
